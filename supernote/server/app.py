@@ -21,6 +21,7 @@ from supernote.server.mcp.auth import create_auth_app
 from supernote.server.mcp.server import create_mcp_server, run_server, set_services
 from supernote.server.utils.auth_utils import get_token_from_request
 
+from . import realtime
 from .config import ServerConfig
 from .constants import MAX_UPLOAD_SIZE
 from .db.models.user import UserDO
@@ -393,6 +394,9 @@ def create_app(config: ServerConfig) -> web.Application:
     app.add_routes(schedule.routes)
     app.add_routes(summary.routes)
     app.add_routes(extended.routes)
+
+    # Register legacy EIO3/SIO2 real-time device route
+    realtime.register(app)
 
     # Attach Socket.IO real-time server manager
     setup_socketio(app, config)
