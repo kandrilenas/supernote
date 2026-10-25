@@ -26,7 +26,10 @@ def sanitize_value(val: Any) -> Any:
         sanitized = {}
         for k, v in val.items():
             lower_k = k.lower().replace("-", "_")
-            if any(secret in lower_k for secret in ("token", "secret", "password", "key", "auth")):
+            if any(
+                secret in lower_k
+                for secret in ("token", "secret", "password", "key", "auth")
+            ):
                 sanitized[k] = "***SANITIZED***"
             else:
                 sanitized[k] = sanitize_value(v)
@@ -35,7 +38,9 @@ def sanitize_value(val: Any) -> Any:
         return [sanitize_value(item) for item in val]
     elif isinstance(val, str):
         # Sanitize JWT strings
-        if re.match(r"^ey[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}$", val):
+        if re.match(
+            r"^ey[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}$", val
+        ):
             return "***SANITIZED_JWT***"
         # Sanitize token query parameters in URLs
         val = re.sub(r"token=[^&]+", "token=***SANITIZED_TOKEN***", val)

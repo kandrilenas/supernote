@@ -13,6 +13,8 @@
 
 set -e
 
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+
 cd "$(dirname "$0")/.."
 
 # Source .env file if present
@@ -37,6 +39,7 @@ for arg in "$@"; do
 done
 
 export SUPERNOTE_JWT_SECRET="${SUPERNOTE_JWT_SECRET:-supernote_dev_secret_key}"
+unset SUPERNOTE_GEMINI_API_KEY
 
 if [ "$PERSISTENT" = true ]; then
   echo "==> Starting persistent server (using storage/)..."

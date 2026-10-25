@@ -59,7 +59,9 @@ class DeviceEmulator:
             headers=self.base_headers,
         )
 
-    async def delete_json(self, path: str, payload: dict[str, Any] | None = None) -> Any:
+    async def delete_json(
+        self, path: str, payload: dict[str, Any] | None = None
+    ) -> Any:
         return await self.client.delete(
             path,
             json=payload or {},
@@ -89,7 +91,11 @@ async def test_device_sync_lifecycle(device_emulator: DeviceEmulator) -> None:
     )
     assert resp_start.status == 200
     data_start = await resp_start.json()
-    assert data_start.get("success") is True or "token" in data_start or "success" in str(data_start)
+    assert (
+        data_start.get("success") is True
+        or "token" in data_start
+        or "success" in str(data_start)
+    )
 
     # 2. Device lists root folder recursively
     resp_list = await device_emulator.post_json(
@@ -134,7 +140,9 @@ async def test_device_schedule_task_creation_with_hex_id(
     }
 
     resp = await device_emulator.post_json("/api/file/schedule/task", task_payload)
-    assert resp.status == 200, f"Expected 200 OK, got {resp.status}: {await resp.text()}"
+    assert resp.status == 200, (
+        f"Expected 200 OK, got {resp.status}: {await resp.text()}"
+    )
     data = await resp.json()
     assert data.get("success") is True
     assert "taskId" in data

@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-from typing import Any
 
 import pytest
 import yaml
@@ -85,7 +84,9 @@ async def test_openapi_route_conformance(server_config: ServerConfig) -> None:
             reg_path == core_route or re.match(pattern, reg_path)
             for _, reg_path in registered_routes
         )
-        assert is_registered, f"Critical core route '{core_route}' is not registered in the application!"
+        assert is_registered, (
+            f"Critical core route '{core_route}' is not registered in the application!"
+        )
 
     # Ensure coverage ratio matches current baseline (at least 65% of community spec)
     total_spec_paths = len(paths)
