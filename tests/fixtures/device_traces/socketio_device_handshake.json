@@ -1,0 +1,86 @@
+[
+  {
+    "timestamp": 1786301625.1752806,
+    "request": {
+      "method": "GET",
+      "url": "http://supernote.andrilenas.me/socket.io/?sign=***SANITIZED_SIGN***&random=1786301639618&EIO=3&transport=websocket&type=SN078D10003660&token=***SANITIZED_TOKEN***",
+      "headers": {
+        "Host": "supernote.andrilenas.me",
+        "X-Real-IP": "10.89.0.6",
+        "X-Forwarded-For": "10.89.0.6",
+        "X-Forwarded-Proto": "https",
+        "Upgrade": "websocket",
+        "Connection": "upgrade",
+        "Sec-WebSocket-Key": "***SANITIZED***",
+        "Sec-WebSocket-Version": "13",
+        "Accept-Encoding": "gzip",
+        "User-Agent": "okhttp/3.12.12"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 400,
+      "headers": {
+        "Content-Type": "text/plain",
+        "Access-Control-Allow-Credentials": "true"
+      },
+      "body": "The client is using an unsupported version of the Socket.IO or Engine.IO protocols"
+    }
+  },
+  {
+    "timestamp": 1786301630.2155688,
+    "request": {
+      "method": "GET",
+      "url": "http://supernote.andrilenas.me/socket.io/?sign=***SANITIZED_SIGN***&random=1786301639618&EIO=3&transport=websocket&type=SN078D10003660&token=***SANITIZED_TOKEN***",
+      "headers": {
+        "Host": "supernote.andrilenas.me",
+        "X-Real-IP": "10.89.0.6",
+        "X-Forwarded-For": "10.89.0.6",
+        "X-Forwarded-Proto": "https",
+        "Upgrade": "websocket",
+        "Connection": "upgrade",
+        "Sec-WebSocket-Key": "***SANITIZED***",
+        "Sec-WebSocket-Version": "13",
+        "Accept-Encoding": "gzip",
+        "User-Agent": "okhttp/3.12.12"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 400,
+      "headers": {
+        "Content-Type": "text/plain",
+        "Access-Control-Allow-Credentials": "true"
+      },
+      "body": "The client is using an unsupported version of the Socket.IO or Engine.IO protocols"
+    }
+  },
+  {
+    "timestamp": 1786301630.333159,
+    "request": {
+      "method": "GET",
+      "url": "http://supernote.andrilenas.me/socket.io/?sign=***SANITIZED_SIGN***&random=1786301644912&EIO=3&transport=websocket&type=SN078D10003660&token=***SANITIZED_TOKEN***",
+      "headers": {
+        "Host": "supernote.andrilenas.me",
+        "X-Real-IP": "10.89.0.6",
+        "X-Forwarded-For": "10.89.0.6",
+        "X-Forwarded-Proto": "https",
+        "Upgrade": "websocket",
+        "Connection": "upgrade",
+        "Sec-WebSocket-Key": "***SANITIZED***",
+        "Sec-WebSocket-Version": "13",
+        "Accept-Encoding": "gzip",
+        "User-Agent": "okhttp/3.12.12"
+      },
+      "body": null
+    },
+    "response": {
+      "status": 400,
+      "headers": {
+        "Content-Type": "text/plain",
+        "Access-Control-Allow-Credentials": "true"
+      },
+      "body": "The client is using an unsupported version of the Socket.IO or Engine.IO protocols"
+    }
+  }
+]
